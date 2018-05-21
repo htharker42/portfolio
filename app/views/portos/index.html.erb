@@ -16,5 +16,6 @@
 	<%end%>
 	<br/>
 	<%= link_to "Edit", edit_porto_path(item.id) %>
+	<%= link_to "Delete", porto_path(item.id), method: :delete, data: { confirm: 'Delete Portfolio Item?'} %>
 	
 <% end %>

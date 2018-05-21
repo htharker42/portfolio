@@ -40,6 +40,13 @@ class PortosController < ApplicationController
 	end
 
 	def destroy 
+		@portfolio_item = Porto.find(params[:id])
+
+		@portfolio_item.destroy
+
+		respond_to do |format| 
+			format.html { redirect_to portos_url, notice: "Portfolio item was removed"}
+		end
 	end
 end
 
