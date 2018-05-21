@@ -22,3 +22,11 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+> This is a ruby on Rails 5 applicaiton that allows users to create their own portfolios. 
+
+### Features 
+-Reat Time chat engine for comments
+-Blog 
+-Portfolio
+-Drag and Drop 
