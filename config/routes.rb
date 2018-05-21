@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  resources :portos
-  
-  resources :portfolio_items
+  resources :portos, except: [:show]
 
+  get'portos/:id', to: 'portos#show', as: 'porto_show'
+  
   get '/about-me', to: 'pages#about' 
 
   get '/contact', to: 'pages#contact'
