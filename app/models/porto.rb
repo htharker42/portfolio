@@ -1,0 +1,2 @@
+class Porto < ApplicationRecord
+end
