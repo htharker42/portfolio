@@ -1,14 +1,22 @@
 Rails.application.routes.draw do
-  resources :portos
+  resources :portos, except: [:show]
+
+  get'portos/:id', to: 'portos#show', as: 'porto_show'
   
-  resources :portfolio_items
+  get '/about-me', to: 'pages#about' 
 
-  get 'pages/home'
+  get '/contact', to: 'pages#contact'
 
-  get 'pages/about'
+  resources :blogs do 
+  	member do 
+  		get :toggle_status
+  	end
 
-  get 'pages/contact'
+  end
 
-  resources :blogs
+
+  root to: 'pages#home'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
 end
