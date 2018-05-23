@@ -1,6 +1,10 @@
 class PortosController < ApplicationController
 	def index
-		@portfolio_items = Porto.all 
+		@portfolio_items = Porto.all
+	end
+
+	def angular
+		@portfolio_items = Porto.angular
 	end
 
 	def new 

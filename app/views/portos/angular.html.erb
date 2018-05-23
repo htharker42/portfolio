@@ -1,0 +1,21 @@
+<h1> Portfolio Items </h1>
+
+<%= link_to "Create New Portfolio Item", new_porto_path %>
+
+<p> <%= new_porto_path %> </p>
+<p> <%= new_porto_url %> </p>
+
+<% @portfolio_items.each do |item| %>
+
+	<p><%= link_to item.title, porto_path(item.id) %> </p>  
+	<h3><%= item.subtitle %></h3>
+	<p><%= item.body %></p>
+	<% unless item.thumb_image.nil? %>
+		<img src=<%= item.thumb_image %> alt="image for #{item}" width="150px" height="200px"/>
+	
+	<%end%>
+	<br/>
+	<%= link_to "Edit", edit_porto_path(item.id) %>
+	<%= link_to "Delete", porto_path(item.id), method: :delete, data: { confirm: 'Delete Portfolio Item?'} %>
+	
+<% end %>
