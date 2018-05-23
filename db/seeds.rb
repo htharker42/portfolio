@@ -59,3 +59,7 @@ end
 		thumb_image: "https://pre00.deviantart.net/b53e/th/pre/f/2012/119/b/7/zoidberg_trace_by_deepfry3-d4y0wlc.png",
 		)
 end
+
+3.times do |technology|
+	Technology.create(name: "Technology #{technology}", porto_id: Porto.last.id)
+	end
