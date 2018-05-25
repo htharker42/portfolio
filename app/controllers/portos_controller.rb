@@ -9,6 +9,7 @@ class PortosController < ApplicationController
 
 	def new 
 		@portfolio_item = Porto.new
+		3.times do @portfolio_item.technologies.build end 
 	end
 
 	def create 
@@ -56,5 +57,5 @@ end
 
 
 def porto_params 
-	params.require(:porto).permit(:title, :subtitle, :body)
+	params.require(:porto).permit(:title, :subtitle, :body, technologies_attributes: [:name])
 end
