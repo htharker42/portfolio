@@ -53,9 +53,18 @@ class PortosController < ApplicationController
 			format.html { redirect_to portos_url, notice: "Portfolio item was removed"}
 		end
 	end
+	private 
+		def porto_params 
+		params.require(:porto).permit(
+			:title, 
+			:subtitle, 
+			:body, 
+			technologies_attributes: [:name]
+			)
+		end
+		
 end
 
 
-def porto_params 
-	params.require(:porto).permit(:title, :subtitle, :body, technologies_attributes: [:name])
-end
+
+

@@ -5,7 +5,8 @@ module SetSource
 		before_action :set_source
 	end 
 
-  def set_source
+  	def set_source
  		session[:source] = params[:q] if params[:q]
  	end
+
 end
