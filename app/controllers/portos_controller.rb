@@ -56,13 +56,12 @@ class PortosController < ApplicationController
 	private 
 		def porto_params 
 		params.require(:porto).permit(
-			:title, 
-			:subtitle, 
-			:body, 
-			technologies_attributes: [:name]
-			)
+									:title, 
+									:subtitle, 
+									:body, 
+									technologies_attributes: [:name]
+									)
 		end
-		
 end
 
 
