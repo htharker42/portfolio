@@ -1,4 +1,6 @@
 class PortosController < ApplicationController
+	layout "portfolio"
+	
 	def index
 		@portfolio_items = Porto.all
 	end
