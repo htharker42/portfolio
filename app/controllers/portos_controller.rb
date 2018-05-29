@@ -28,6 +28,7 @@ class PortosController < ApplicationController
 
 	def edit
 		@portfolio_item = Porto.find(params[:id])
+		3.times do @portfolio_item.technologies.build end 
 	end
 
 	def update
