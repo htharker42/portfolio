@@ -17,4 +17,8 @@ module ApplicationHelper
 		end
 	end
 
+	def copyright_generator
+		HarkerViewTool::Renderer.copywrite 'Hugh Harker', 'All Rights Reserved'
+	end
+
 end
