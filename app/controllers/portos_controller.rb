@@ -1,4 +1,6 @@
 class PortosController < ApplicationController
+	before_action :set_portfolio_item, only: [:edit, :update, :show, :destroy]
+	
 	layout "portfolio"
 	
 	def index
@@ -27,12 +29,10 @@ class PortosController < ApplicationController
 	end
 
 	def edit
-		@portfolio_item = Porto.find(params[:id])
 		3.times do @portfolio_item.technologies.build end 
 	end
 
 	def update
-		@portfolio_item = Porto.find(params[:id])
 
 		respond_to do |format|
 	      if @portfolio_item.update(porto_params)
@@ -44,11 +44,10 @@ class PortosController < ApplicationController
 	end
 
 	def show
-		@portfolio_item = Porto.find(params[:id])
+		#binding.pry
 	end
 
 	def destroy 
-		@portfolio_item = Porto.find(params[:id])
 
 		@portfolio_item.destroy
 
@@ -65,6 +64,11 @@ class PortosController < ApplicationController
 									technologies_attributes: [:name]
 									)
 		end
+
+		def set_portfolio_item 
+			@portfolio_item = Porto.find(params[:id])
+		end
+
 end
 
 
