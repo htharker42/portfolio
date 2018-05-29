@@ -1,0 +1,11 @@
+	<p><%= link_to portfolio_item.title, porto_path(portfolio_item.id) %> </p>  
+	<h3><%= portfolio_item.subtitle %></h3>
+	<p><%= portfolio_item.body %></p>
+	<% unless portfolio_item.thumb_image.nil? %>
+		<img src=<%= portfolio_item.thumb_image %> alt="image for #{item}" width="150px" height="200px"/>
+	
+	<%end%>
+	<br/>
+	<%= link_to "Edit", edit_porto_path(portfolio_item.id) %>
+	<%= link_to "Delete", porto_path(portfolio_item.id), method: :delete, data: { confirm: 'Delete Portfolio Item?'} %>
+	
