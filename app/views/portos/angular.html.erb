@@ -1,6 +1,6 @@
 <h1> Portfolio Items </h1>
 
-<%= link_to "Create New Portfolio Item", new_porto_path %>
+<%= link_to "Create New Portfolio Item", new_porto_path if logged_in?(:admin)%>
 
 <p> <%= new_porto_path %> </p>
 <p> <%= new_porto_url %> </p>
@@ -15,7 +15,7 @@
 	
 	<%end%>
 	<br/>
-	<%= link_to "Edit", edit_porto_path(item.id) %>
-	<%= link_to "Delete", porto_path(item.id), method: :delete, data: { confirm: 'Delete Portfolio Item?'} %>
+	<%= link_to "Edit", edit_porto_path(item.id)if logged_in?(:admin) %>
+	<%= link_to "Delete", porto_path(item.id), method: :delete, data: { confirm: 'Delete Portfolio Item?'} if logged_in?(:admin)%>
 	
 <% end %>
