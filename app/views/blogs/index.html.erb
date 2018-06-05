@@ -7,15 +7,8 @@
           <h3 class="pb-3 mb-4 font-italic border-bottom">
             Dispatches from the Front 
           </h3>
-
-            <%= link_to 'New Blog', new_blog_path if logged_in?(:admin) %>
               <%= render @blogs %>
-          
-
-          <nav class="blog-pagination">
-            <a class="btn btn-outline-primary" href="#">Older</a>
-            <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
-          </nav>
+              <%= paginate @blogs %>
         
         </div><!-- /.blog-main -->
   
