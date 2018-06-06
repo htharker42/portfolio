@@ -1,11 +1,29 @@
-	<p><%= link_to portfolio_item.title, porto_path(portfolio_item.id) %> </p>  
-	<h3><%= portfolio_item.subtitle %></h3>
-	<p><%= portfolio_item.body %></p>
-	<% unless portfolio_item.thumb_image.nil? %>
-		<img src=<%= portfolio_item.thumb_image %> alt="image for #{item}" width="150px" height="200px"/>
-	
-	<%end%>
-	<br/>
-	<%= link_to "Edit", edit_porto_path(portfolio_item.id) if logged_in?(:admin)%>
-	<%= link_to "Delete", porto_path(portfolio_item.id), method: :delete, data: { confirm: 'Delete Portfolio Item?'} if logged_in?(:admin)%>
-	
+	<div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+				<% unless portfolio_item.thumb_image.nil? %>
+					<img src=<%= portfolio_item.thumb_image %> class="card-img-top" alt="image for #{item}" width="150px" height="200px"/>
+				<%end%>
+                <div class="card-body">
+                  <p class="card-text">
+                  	<span>
+                  		<strong>
+                  			<%= link_to portfolio_item.title, porto_path(portfolio_item.id) %>
+                  			
+                  		</strong>
+                  	</span>
+                  	<span><em>
+                  		<%= portfolio_item.subtitle %>
+                  	</em></span>
+						
+					</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                    </div>
+                    <small class="text-muted">9 mins</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
