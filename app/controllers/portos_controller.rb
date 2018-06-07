@@ -5,7 +5,7 @@ class PortosController < ApplicationController
 	access all: [:show, :index, :angular], user: {except: [:destroy]}, admin: :all
 	
 	def index
-		@portfolio_items = Porto.all
+		@portfolio_items = Porto.by_position
 	end
 
 	def angular
