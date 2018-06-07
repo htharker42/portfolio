@@ -21,5 +21,47 @@ module ApplicationHelper
 		HarkerViewTool::Renderer.copywrite 'Hugh Harker', 'All Rights Reserved'
 	end
 
+	def nav_items 
+		[
+		{
+			url: root_path,
+			title: "Home"
+		},
+
+		{
+			url: about_me_path,
+			title: "About Me"
+		},
+		{
+			url: blogs_path,
+			title: "Blog"
+		},
+		{
+			url: portos_path,
+			title: "Portfolio"
+		},
+		{
+			url: contact_path,
+			title: "Contact"
+		}
+	]
+	end
+
+
+	def nav_helper style, tag_type
+		nav_links = ''
+		
+		nav_items.each do |item| 
+			nav_links << "<#{tag_type}><a href='#{item[:url]}' class='#{style} #{active? item[:url]}'>#{item[:title]}</a></#{tag_type}>"
+		end
+		
+		nav_links.html_safe
+	end
+
+
+	def active? path
+		"active" if current_page? path
+	end
 
 end
+
