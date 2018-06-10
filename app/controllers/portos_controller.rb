@@ -8,8 +8,21 @@ class PortosController < ApplicationController
 		@portfolio_items = Porto.by_position
 	end
 
+	def sort
+	params[:order].each do |key, value|
+      	Portos.find(value[:id]).update(position: value[:position])
+      end
+    end
+
 	def angular
 		@portfolio_items = Porto.angular
+	end
+
+	def sort
+		params[:order].each do |key, value|
+			Porto.find(value[:id]).update(position: value[:position])
+		end 
+		render nothing: true
 	end
 
 	def new 

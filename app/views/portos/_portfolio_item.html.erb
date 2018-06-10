@@ -1,9 +1,9 @@
 	<div class="col-md-4">
-              <div class="card mb-4 box-shadow">
+        <div class="card mb-4 box-shadow" data-id="<%= portfolio_item.id %>">
 				<% unless portfolio_item.thumb_image.nil? %>
 					<img src=<%= portfolio_item.thumb_image %> class="card-img-top" alt="image for #{item}" width="150px" height="200px"/>
 				<%end%>
-                <div class="card-body">
+                <div class="card-body" >
                   <p class="card-text">
                   	<span>
                   		<strong>

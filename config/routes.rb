@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register' }
-  resources :portos, except: [:show]
+  
+  resources :portos, except: [:show] do 
+    put :sort, on: :collection 
+  end
 
   get'portos/:id', to: 'portos#show', as: 'porto_show'
   
