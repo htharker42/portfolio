@@ -12,13 +12,16 @@
 
     <title><%= @page_title %></title>
   </head>
-  <body class="text-center">
+  
+  <body class="text-center" id="background">
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      
       <header class="masthead mb-auto">
-
+      
         <%= render 'shared/application_nav' %>
 
       </header>
+
     
         <%= yield %>
 
