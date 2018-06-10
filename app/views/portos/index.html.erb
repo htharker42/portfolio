@@ -3,7 +3,7 @@
 	<div class="container">
 		<h1> Portfolio Items </h1>
 		<hr>
-  		<div class="row sortable">
+  		<div class="row <%= "sortable" if logged_in?(:admin) %>">
 			
 			<%= render partial: 'portfolio_item', collection: @portfolio_items %>
  

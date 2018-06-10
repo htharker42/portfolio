@@ -2,7 +2,7 @@ class PortosController < ApplicationController
 	before_action :set_portfolio_item, only: [:edit, :update, :show, :destroy]
 	
 	layout "portfolio"
-	access all: [:show, :index, :angular], user: {except: [:destroy]}, admin: :all
+	access all: [:show, :index, :angular], user: {except: [:destroy, :new, :create, :edit, :sort]}, admin: :all
 	
 	def index
 		@portfolio_items = Porto.by_position
