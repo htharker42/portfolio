@@ -20,3 +20,4 @@
 
 #is it secret, is it safe?
 /config/secrets.yml
+.env
