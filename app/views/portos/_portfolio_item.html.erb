@@ -1,8 +1,8 @@
 	<div class="col-md-4">
         <div class="card mb-4 box-shadow" data-id="<%= portfolio_item.id %>">
-				<% unless portfolio_item.thumb_image.nil? %>
-					<img src=<%= portfolio_item.thumb_image %> class="card-img-top" alt="image for #{item}" width="150px" height="200px"/>
-				<%end%>
+				  
+          <%= image_tag portfolio_img(portfolio_item.thumb_image, 'thumb') %>
+
                 <div class="card-body" >
                   <p class="card-text">
                   	<span>
@@ -18,8 +18,9 @@
 					</p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+
+                      <%= link_to "View", porto_path(portfolio_item.id), class: "btn btn-sm btn-outline-secondary" %>
+                      
                     </div>
                     <small class="text-muted">9 mins</small>
                   </div>
