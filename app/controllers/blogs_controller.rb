@@ -19,16 +19,22 @@ class BlogsController < ApplicationController
   # GET /blogs/new
   def new
     @blog = Blog.new
+    @topic = Topic.last 
+    @blog.topic_id = @topic 
   end
 
   # GET /blogs/1/edit
   def edit
+    
   end
 
   # POST /blogs
   # POST /blogs.json
   def create
     @blog = Blog.new(blog_params)
+
+    @topic = Topic.last 
+    @blog.topic_id = @topic 
 
     respond_to do |format|
       if @blog.save
@@ -79,6 +85,11 @@ class BlogsController < ApplicationController
     def set_blog
       @blog = Blog.friendly.find(params[:id])
     end
+
+    def set_topic 
+      @topic = Topic.last
+    end
+
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def blog_params

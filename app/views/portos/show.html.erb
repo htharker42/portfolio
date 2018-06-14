@@ -18,8 +18,11 @@
 				<%end %>
 
 			<% if logged_in?(:admin) %>
-				<p><%= link_to "Edit", edit_porto_path(@portfolio_item.id) %></p>
-				<p><%= link_to "Delete", porto_path, method: :delete, data: { confirm: 'Delete Portfolio Item?'}%></p>
+				<p>
+					<%= link_to "Edit", edit_porto_path(@portfolio_item.id), class: "btn btn-primary" %> 
+					<%= link_to "Delete", porto_path, method: :delete, data: { confirm: 'Delete Portfolio Item?'}, class: "btn btn-warning"%>	
+				</p>
+				
 			<% end %>
 
 		</div>

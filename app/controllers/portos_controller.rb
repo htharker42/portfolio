@@ -26,8 +26,9 @@ class PortosController < ApplicationController
 	end
 
 	def new 
+		
 		@portfolio_item = Porto.new
-		3.times do @portfolio_item.technologies.build end 
+		 @portfolio_item.technologies.build 
 	end
 
 	def create 
@@ -43,7 +44,7 @@ class PortosController < ApplicationController
 	end
 
 	def edit
-		3.times do @portfolio_item.technologies.build end 
+		times do @portfolio_item.technologies.build end 
 	end
 
 	def update
@@ -77,7 +78,7 @@ class PortosController < ApplicationController
 									:body, 
 									:main_image,
 									:thumb_image,
-									technologies_attributes: [:name]
+									technologies_attributes: [:id, :name, :_destroy]
 									)
 		end
 

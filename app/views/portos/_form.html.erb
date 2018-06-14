@@ -27,15 +27,16 @@
 		  	</label>
 		  </div>
 
-		  <ul>
+		 <div class="col-md-6">
 		  	<%= form.fields_for :technologies do |tech_form| %>
-		  		<div class="form-group">
-		  			<li> <%= tech_form.label :name %> </li>
-		  			<li> <%= tech_form.text_field :name %> </li>
-		  		</div>
-		  	<% end %>
-		  
-		  </ul>
+		  		<%= render 'technology_fields', f: tech_form %>
+		  		<% end %>
+		  </div>
+		  	
+		  	<div class= "col-md-6">
+		  		<%= link_to_add_association "Add Technology", form, :technologies, class: "btn btn-success btn-block" %>
+		  	</div>
+		 	<hr>
 
 		  <div class="actions">
 		    <%= form.submit "submit", class: 'btn btn-primary btn-block' %>
