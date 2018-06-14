@@ -23,4 +23,5 @@ class User < ApplicationRecord
   	self.name.split.last 
   end
 
+  has_many :comments, dependent: :destroy
 end
