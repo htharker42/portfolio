@@ -1,0 +1,17 @@
+
+
+
+<main role="main" class="inner cover">
+	<h1 class="cover-heading">News</h1>
+	<div class="row">
+		<% @tweets.each do |tweet| %>
+			<div class="col-md-6">
+				<div class='news'>
+					<div class="card">
+						<p><%= tweet %> </p>
+					</div>
+				</div>
+			</div>
+		<% end %>
+	</div>
+</main>

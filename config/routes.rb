@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   get '/contact', to: 'pages#contact'
 
+  get 'news', to: 'pages#news'
 
   resources :blogs do 
   	member do 
