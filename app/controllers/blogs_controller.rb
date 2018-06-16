@@ -3,17 +3,19 @@ class BlogsController < ApplicationController
   layout "blog"
   access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit, :toggle_status]}, admin: :all
 
-  # GET /blogs
-  # GET /blogs.json
+
   def index
     @blogs = Blog.order('created_at DESC').page(params[:page]).per(5)
     @page_title = "Developer Blog"
   end
 
-  # GET /blogs/1
-  # GET /blogs/1.json
   def show
+    @blog = Blog.includes(:comments).friendly.find(params[:id])
+    @comment = Comment.new
+
     @page_title = @blog.title
+    @seo_keywords = @blog.body
+
   end
 
   # GET /blogs/new
