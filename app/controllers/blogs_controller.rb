@@ -15,13 +15,19 @@ class BlogsController < ApplicationController
   end
 
   def show
-    @blog = Blog.includes(:comments).friendly.find(params[:id])
-    @comment = Comment.new
+  	if logged_in?(:admin) || @blog.published? #blog enum 
+	    @blog = Blog.includes(:comments).friendly.find(params[:id])
+	    @comment = Comment.new
 
-    @page_title = @blog.title
-    @seo_keywords = @blog.body
+	    @page_title = @blog.title
+	    @seo_keywords = @blog.body
+	else
+		redirect_to blogs_path, notice: "You are not authorized to access this page"
+	end 
+			
+	end
 
-  end
+
 
   # GET /blogs/new
   def new
