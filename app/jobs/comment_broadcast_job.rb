@@ -13,3 +13,4 @@ class CommentBroadcastJob < ApplicationJob
 	end 
 
 end
+
