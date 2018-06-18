@@ -5,7 +5,12 @@ class BlogsController < ApplicationController
 
 
   def index
-    @blogs = Blog.order('created_at DESC').page(params[:page]).per(5)
+  	if logged_in?(:admin)
+    @blogs = Blog.recent.page(params[:page]).per(5)
+	else 
+	@blogs = Blog.published.recent.page(params[:page]).per(5)
+	end 
+
     @page_title = "Developer Blog"
   end
 
