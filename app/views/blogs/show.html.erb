@@ -24,11 +24,14 @@
            		<%= link_to 'Destroy', blog_path(@blog), method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:admin) %>
            	<% end %>
           </div>
-          <div id="comments" data_blog_id="<%= @blog.id %>">
-            <%= @blog.id %>
-          <%= render "comments/comment_form" %>
+
+            <%= render "comments/comment_form" %>
+
+
+          <div id="comments" data-blog-id="<%= @blog.id %>">
+            <%= render @blog.comments %>
           </div>
-          
+
         
         </div>
   
