@@ -23,27 +23,15 @@
            		
            		<%= link_to 'Destroy', blog_path(@blog), method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:admin) %>
            	<% end %>
+          </div>
+          <%= render "comment_form" %>
 
-            <!-- start of comments -->
-              <% unless current_user.is_a? GuestUser %>
-                <%= form_for @comment, url: '#' do |f|  %>
-
-                  <div class="form-group">
-                    <%= f.label :content %>
-                    <%= f.text_area :content, class: 'form-control' %>
-                  </div>
-                  
-                    <%= f.submit 'Post Comment', class: 'btn btn-primary' %>
-
-                <%end%> 
-              <% end %>
-            <!-- end of comments -->
-           </div>
+          <%= render @blog.comments %>
         
-        </div><!-- /.blog-main -->
+        </div>
   
         <%= render 'shared/blog_sidebar' %>
-    </div>
+</div>
 
 
 
