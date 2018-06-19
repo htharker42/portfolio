@@ -82,3 +82,8 @@ gem 'gritter', '~> 1.2'
 gem 'twitter', '~> 6.2'
 
 gem 'redis', '~> 4.0', '>= 4.0.1'
+
+#blog formatting with markdown and text formatting
+gem 'redcarpet', '~> 3.4'
+#synatx highlighting 
+gem 'coderay', '~> 1.1', '>= 1.1.2'

@@ -12,7 +12,7 @@
            	<p> <%= @blog.topic.title %> </p>
            	<p class="blog-post-meta"> Published <%= distance_of_time_in_words(@blog.created_at, Time.now) %> ago</p>
 
-           	<p><%= @blog.body %></p>
+           	<p><%= markdown(@blog.body) %></p>
 
            	<%= link_to 'Back', blogs_path %> 
 
