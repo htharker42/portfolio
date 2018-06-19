@@ -107,9 +107,9 @@ class BlogsController < ApplicationController
     def set_sidebar_topics
   	@side_bar_topics = Topic.with_blogs
   	end
-  	
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def blog_params
-      params.require(:blog).permit(:title, :body, :topic_id)
+      params.require(:blog).permit(:title, :body, :topic_id, :status)
     end
 end
