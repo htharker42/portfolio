@@ -17,32 +17,17 @@
            	    <%= link_to "Blogs", blogs_path, class: "breadcrumb-item" %> <%= link_to @blog.topic.title, topic_path(@blog.topic.id), class: "breadcrumb-item" %> 
            	    <span class="breadcrumb-item active" aria-current="page">
            	    	<%= @blog.title %> </span>
+           	 </nav>
 
-           	</nav>
+           	 <div class="float-right">
 
-           	<span class="pull-right">
-           		<% if logged_in?(:admin) %>
-           		<%=link_to fa_icon('pencil-square-o'), edit_blog_path(@blog) %> 
-           		<span> | </span>
-           		<%= link_to fa_icon('trash'), blog_path(@blog), method: :delete, data: { confirm: 'Are you sure you want to delete this post?' } if logged_in?(:admin) %>
-           		<span> | </span>
-           		<% if @blog.status == 'published' %> 
-           			<%=link_to fa_icon('check'),toggle_status_blog_path(@blog) %> 
-           		<% else %>
-           		<%=link_to fa_icon('times-circle'),toggle_status_blog_path(@blog) %>
-           			<% end %>
+           	 <%= render partial: 'blogs/admin_actions', locals: { blog: @blog } %>
 
-           		<%end%>
-           	</span>
+           	</div>
 
            	<p><%= markdown(@blog.body) %></p>
 
-           	<%= link_to 'Back', blogs_path %> 
-
-           	<% if logged_in?(:admin) %>
-           		<%= link_to @blog.status, toggle_status_blog_path(@blog) if logged_in?(:admin) %> 
-
-           	<% end %>
+           	<%= link_to fa_icon('back-left'), blogs_path %> 
           </div>
 
             <%= render "comments/comment_form" %>
@@ -54,8 +39,9 @@
 
         
         </div>
-  
+        <div>
         <%= render 'shared/blog_sidebar' %>
+        </div>
 </div>
 
 
