@@ -1,12 +1,82 @@
-<h1>About Me</h1>
-<hr>
+<div class="app-card-container">
+	<div class='card'>
+		<div class="col-md-6 text-center">
+			<h1>About Me</h1>
+			<hr>
+		</div>
+
 <div class="row">
 	<div class="col-md-6 text-center">
 		<%= image_tag  "pic.jpg", alt: "portrait",  width: "250px", height: "300px"  %>
 	</div>
 
-	<div class="col-md-6 text-center">
+	<div class="col-md-6">
 		<p>I need some copy for this part</p>
+		<p>
+			<button 
+				class="btn btn-primary"
+				type="button"
+				data-toggle="collapse"
+				data-target="#jobHistory"
+				aria-expanded="false"
+				aria-controller="jobHistory"
+				> 
+				Job History
+			</button>
+		</p>
+
+		<p>
+			<button 
+				class="btn btn-primary"
+				type="button"
+				data-toggle="collapse"
+				data-target="#education"
+				aria-expanded="false"
+				aria-controller="education"
+				> 
+				Education
+			</button>
+		</p>
+
+		<p>
+			<div class="collapse" id="jobHistory">
+				<div class="card card-block">
+					Jobs 1
+				</div>
+
+				<div class="card card-block">
+					Jobs 2
+				</div>
+			</div>
+		</p>
+
+		<p>
+			<div class="collapse" id="education">
+				<div class="card card-block">
+					Bootcamp: 
+				</div>
+
+				<div class="card card-block">
+					Programming Certifications: 
+				</div>
+
+				<div class="card card-block">
+					Professional Certifications: 
+				</div>
+
+				<div class="card card-block">
+					Master's of Environmental Planning and Design
+				</div>
+
+				<div class="card card-block">
+					BA: History 
+				</div>
+			</div>
+		</p>
 	</div>
 
+
+
+
+</div>
 </div>
