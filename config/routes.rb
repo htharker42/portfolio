@@ -14,7 +14,7 @@ resources :topics, only: [:index, :show]
 
   get '/contact', to: 'pages#contact'
 
-  get 'news', to: 'pages#news'
+  get '/news', to: 'pages#news'
 
   resources :blogs do 
   	member do 
