@@ -54,3 +54,5 @@ environment ENV.fetch("RAILS_ENV") { "development" }
 
 # Allow puma to be restarted by `rails restart` command.
 plugin :tmp_restart
+# $ heroku config:set RAILS_MAX_THREADS=1
+# workers Integer(ENV['WEB_CONCURRENCY'] || 2)
